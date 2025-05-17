@@ -1,0 +1,20 @@
+PASOS PARA CREAR LA BASE DE DATOS EN POSTGRESQL
+
+Requisitos:
+    - Tener postgresql@15
+    - Tener el servidor de postgres corriendo
+
+//Con esto se crea la base de datos
+createdb managewise
+
+//Con esto se crea el usuario postgres con clave 1234
+psql postgres
+CREATE ROLE postgres WITH LOGIN PASSWORD '1234';
+ALTER ROLE postgres CREATEDB;
+\q
+
+//Con esto se le da owner al usuario postgres y se le otorgan todos los permisos de creación de tablas
+psql managewise
+ALTER SCHEMA public OWNER TO postgres;
+GRANT ALL PRIVILEGES ON SCHEMA public TO postgres;
+GRANT ALL PRIVILEGES ON DATABASE managewise TO postgres;

@@ -17,6 +17,7 @@ import java.util.List;
  * </p>
  */
 @Entity
+@Table(name = "roles")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
