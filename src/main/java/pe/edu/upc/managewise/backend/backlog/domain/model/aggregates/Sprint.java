@@ -40,10 +40,12 @@ public class Sprint extends AuditableAbstractAggregateRoot<Sprint> {
         this.endDate = command.endDate();
     }
 
-    public Sprint updateInformation(String title, String goal, SprintStatus status) {
+    public Sprint updateInformation(String title, String goal, SprintStatus status, Date startDate, Date endDate) {
         this.title = title;
         this.goal = goal;
         this.status = status;
+        this.startDate = startDate;
+        this.endDate = endDate;
         return this;
     }
 
